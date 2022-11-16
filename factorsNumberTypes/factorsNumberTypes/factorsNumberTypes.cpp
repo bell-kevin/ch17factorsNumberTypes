@@ -1,7 +1,7 @@
-// factorsNumberTypes.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// factorsNumberTypes.cpp
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
@@ -17,17 +17,20 @@ int main()
 	int number;
 	cin >> number;
 	cout << "Here are all the factors of " << number << ":\n";
+	//use a vector
+	vector<int> factors;
 	int sum = 0;
-	//display factors except for number itself and sum them
+	// display factors except for the number itself and sum them
 	for (int i = 1; i < number; i++)
 	{
 		if (number % i == 0)
 		{
 			cout << i << " ";
 			sum += i;
+			factors.push_back(i);
 		}
 	}
-	cout << "\n\n";
+	cout << endl;
 	cout << "The sum of the factors is " << sum << ".\n";	
 	//determine type of number
 	if (sum == number)
